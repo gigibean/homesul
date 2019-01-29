@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+//@import "devise_bootstrap_views";
+
+// @import "style";
+// @import "style.responsive";
+// @import url('https://fonts.googleapis.com/css?family=Anton|Permanent+Marker|Quicksand|Song+Myung');
+
+
+
+body{
+	background-image: url(backimage.jpg);
+	text-align: center;
+	a:link{
+	    text-decoration: none;
+	}
+	a:visited{
+	    text-decoration: none;
+	}
+	a:hover {
+	    text-decoration: underline;
+	}
+
+
+    
+}
+header {
+    a:link{
+	    color: #000000;
+	}
+	a:visited{
+	    color: #000000;
+	}
+	a:hover {
+	    color: #000000;
+	}
+
+}
+#logo{
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+footer {
+    margin-top: 30px;
+    color: #595858;
+    a{
+        color: #595858;
+        &:hover{
+            color: #494949;
+        }
+    }
+}
+
+
+
+// .p{
+//     text-align: center;
+// }
+
+// .title_1{
+//     font-family: 'Anton', sans-serif;
+//     font-size: 40px;
+//     text-align: center;
+    
+//     border-top: 5px solid red;
+//     background-color: white;
+//     margin-top: 10px;
+//     padding-top: 10px;
+// }
+
+// .smalltitle{
+//     font-family: 'Quicksand', sans-serif;
+//     font-size: 30px;
+//     text-align: center;
+// }
+// .link{
+//     font-family: 'Quicksand', sans-serif;
+//     font-size: 16px;
+//     text-align: center;
+// }
+// .link_2{
+//     font-family: 'Quicksand', sans-serif;
+//     font-size: 16px;
+//     text-align: center;
+//     color: white;
+// }
+
+// .content{
+//     font-family: 'Song Myung', serif;
+//     text-align: center;
+// }
+
+

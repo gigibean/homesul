@@ -1,0 +1,31 @@
+  <% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+<%= link_to "New post", new_recipe_path, class: "btn btn-primary" %>
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>
+   <% @post_all.each do |post| %>
+      <tr>
+         <th><a href = "/my_profile"><%=post.user.email%></a><br></th>
+      </tr>
+   </thead>
+   
+   <tbody>
+         <tr>
+            <td><a href = "/recipe/<%=post.id%>"><%=post.title%></a><br/></td>     
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+
+

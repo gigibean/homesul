@@ -1,0 +1,29 @@
+<header>
+<% if user_signed_in? %>
+  <!--이름으로 바꾸기-->
+    <p style="text-align:right;"><%= current_user.email %>님 환영합니다.<%=link_to 'sign out', destroy_user_session_path, method: 'delete' %> <%=link_to 'My Profile', my_profile_path, method: 'get' %>  </p>
+<% else %>
+  <p style="text-align:right;">로그인하세요.  <a href="/users/sign_in">sign in</a></p>
+<% end %>
+<center><%= link_to "HOME술", root_path, id:'logo', class: 'navbar-brand' %></center>
+<ul class="nav justify-content-center" id="menu">
+  <li class="nav-item">
+    <a class="nav-link" href="/drink">술</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href='/recipe/index'>레시피</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href='/place/index'>술집</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">커뮤니티</a></a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href='#'>WEBZIN</a>
+      <a class="dropdown-item" href='#'>EVENT</a>
+      <a class="dropdown-item" href='/chat/index'>CHAT</a>
+    </div>
+  </li>
+</ul>
+
+</header>

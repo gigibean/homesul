@@ -1,0 +1,61 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div><h1>Post</h1></div>
+    <div class="title_1">
+        <label for="InputTitle1">TITLE</label><br/>
+        <%=@post.title%>
+    </div>
+    <div class="title_1">
+       
+    
+        <label for="exempleTextarea">CONTENT</label><br/>
+        <!--<@%= @post.cover %><br>-->
+        <%= image_tag("#{@post.cover}") %><br>
+         
+     
+        <%=@post.content%>
+    </div>
+     <a href="/drink" class="btn btn-secondary" >BACK</a>
+     <a href="/drink/<%=@post.id%>/edit" class="btn btn-secondary" >EDIT</a>
+     <%= button_to "Delete", "/drink/#{@post.id}", method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{@post.title}?" %></td>
+    
+    
+    <!--좋아요-->
+    <% if @post.l_users.include?(current_user) %>
+    <!--    좋아요를 했다면 --!>-->
+        <%= link_to like_drink_path, method: :post do  %>
+            <span style="color:red"><%= fa_icon "heart" %></span>
+        <% end %>
+    <% else %>
+    <!--     좋아요를 안했다면 --!>-->
+        <%= link_to like_drink_path, method: :post do  %>
+            <span style="color:black"><%= fa_icon "heart" %></span>
+        <% end %>
+    <% end %>
+    <strong>
+        <%= @post.likes.count %>명이 좋아합니다.
+    </strong>
+    
+    
+    <!--댓글 뷰 -->
+    <% @post.comments.each do |comment| %>
+    <div class="card">
+      <h5 class="card-header">
+          <%=comment.user.email %></h5>
+      <div class="card-body">
+        <p class="card-text">
+            <%=comment.comment %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+    
+    <%= bootstrap_form_for Comment.new do |f| %>
+    <%= f.hidden_field :commentable_id, value: @post.id %>
+    <%= f.hidden_field :commentable_type, value: @post.class%>
+    <%= f.text_field :comment%>
+    <%= f.submit %>
+    <%end%>
+</body>

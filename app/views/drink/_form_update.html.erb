@@ -1,0 +1,21 @@
+<%= bootstrap_form_for :drink, :url => {:controller => "drink", :action => "update"}, :method => :patch do |f| %>
+
+ <div class="form-group">
+      <!--<@%= f.label :title, for: "InputTitle1" %><br>-->
+      <%= f.text_field :title, class: "form_control", value: "#{@post.title}" %>
+    </div>
+    <div class="form-group">
+      <!--<@%= @post.cover %>-->
+      <!--<@%= f.label :content, for: "exampleTextarea" %><br>-->
+      <%= f.text_area :content,  class: "form_control", row: 12, value: "#{@post.content}"%>
+    </div>
+    <div class="form-group">
+        <!--<!%= f.label :cover %>-->
+        <%= f.file_field :cover, value: "public/uploads/#{drink}/cover/#{@post.id}/#{@post.cover}" %>
+        <!--image_tag("/icons/icon.gif", size: "16")-->
+    </div>
+    <div class="button_fam">
+      <%= f.submit%>
+    </div>
+ 
+<% end %>

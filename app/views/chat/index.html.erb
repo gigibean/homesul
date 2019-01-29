@@ -1,0 +1,10 @@
+
+
+
+<a href="/chat/new" class="btn btn-primary">NEW CHAT</a>
+<br />
+<% @post_all.each do |post| %>
+    <%=post.id%>
+    <a href="/chat/show/<%=post.id%>"><%=post.Title%></a>
+<% end %>
+

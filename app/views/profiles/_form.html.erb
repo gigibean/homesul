@@ -1,0 +1,21 @@
+<%= bootstrap_form_for profile, url: update_profile_path do |f| %>
+    <div>
+		<%= f.label :name, '이름' %>
+		<%= f.text_field :name %>
+	</div>
+	<div> 
+		<%= f.label :adress, '주소' %>
+		<%= f.text_field :adress %>
+	</div>
+	<div>
+		<%= f.label :mobile, '핸드폰' %>
+		<%= f.text_field :mobile %>
+	</div>
+	<div> 
+		<%= f.label :birth, '생년월일'; %>
+		<%= f.date_field :birth %>
+	</div>
+	<div>
+		<%= f.submit %>
+	</div>
+	<%end%>

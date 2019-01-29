@@ -1,0 +1,41 @@
+  <!--<div class="new_article"><a href="/drink/new">새 글 작성</a>-->
+  <!--</div>-->
+  <!--<br>-->
+  <!--<br>-->
+  <!-- <div class="title_1"><h1>Posts</h1></div>-->
+  <!--<#% #@post_all.each do |p| %>-->
+  <!--<a href = "/drink/<#%=p.id%>"><#%=p.title%></a><br/>-->
+  <!--<#% end %>-->
+  
+  <% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+<%= link_to "New post", new_drink_path, class: "btn btn-primary" %>
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>
+   <% @post_all.each do |post| %>
+      <tr>
+         <th>
+             <a href = "/my_profile"><%=post.user.email%><br></a>
+             </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+         <tr>
+            <td><a href = "/drink/<%=post.id%>"><%=post.title%></a><br/></td>     
+         </tr>
+      <% end %>
+   </tbody>
+   
+</table>
+
+
